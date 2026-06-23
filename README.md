@@ -1,26 +1,31 @@
-# RJP Obras Pro IA V4
+# RJP Obras Pro IA V4.2
 
-Base Android + WebApp para gestão de obras, inspirada na evolução da RJP_Obras V3.1.
+Base Android/WebApp para gestão de obras, orçamentos, composição de preços, medições/autos, custos reais, diário IA e análise de PDFs.
 
-## Inclui
-- Dashboard financeiro
-- Obras
-- Orçamentos / mapa de quantidades
-- Composição de preços
-- Medições / Autos
-- Custos reais
-- Diário de obra com IA local
-- Assistente IA para PDFs/texto/GPT via Apps Script/backend
-- PDF, Excel, backup local
-- Google Sheets/Drive por Apps Script
-- Workflows GitHub para WebApp e APK
+## Novidades V4.2
 
-## Como usar
-1. Extrair o ZIP.
-2. Enviar os ficheiros soltos para um repositório GitHub limpo.
-3. Actions > Build WebApp ou Build Android APK.
-4. No Google Apps Script, colar `google-apps-script/Code.gs`.
-5. Publicar como App Web e colar o URL no separador Google da app.
+- Importação de PDF de texto diretamente no browser com `pdfjs-dist`.
+- Separador **IA PDF / GPT** com botão para carregar PDF.
+- Extração de texto por página para análise local ou envio para backend/Apps Script GPT.
+- Botão **Criar artigos no orçamento** a partir de quantidades detetadas no texto/resultado IA.
+- Botão **PDF Auto** em cada medição/auto.
+- Mantém APK + WebApp + Apps Script, como na filosofia RJP Study.
 
-## Nota IA/GPT
-Não colocar API Key OpenAI dentro da APK. Usar Apps Script, Firebase, Supabase ou backend Node como ponte segura.
+## Atenção
+
+PDFs digitalizados como imagem precisam de OCR ou análise visual através de backend seguro. Não colocar API Key da OpenAI dentro da APK.
+
+## Comandos
+
+```bash
+npm install --legacy-peer-deps
+npm run build
+```
+
+## Android
+
+O workflow `.github/workflows/build-android.yml` gera APK via GitHub Actions.
+
+## WebApp
+
+O workflow `.github/workflows/build-web.yml` gera o pacote WebApp em `dist`.
