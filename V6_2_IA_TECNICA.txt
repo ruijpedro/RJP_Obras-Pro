@@ -1,0 +1,12 @@
+RJP Obras Pro IA V6.2
+
+Novos módulos planeados:
+- Chat Técnico por Obra
+- Análise de PDFs
+- Diário IA
+- Autos IA
+- Relatórios IA
+- Integração GPT
+
+Próxima implementação:
+Menu IA Obra.
