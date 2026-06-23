@@ -1,0 +1,4 @@
+Build V6 testado com sucesso antes de limpar node_modules/dist.
+Comandos usados:
+  npm install --no-audit --no-fund --legacy-peer-deps --no-package-lock
+  npm run build

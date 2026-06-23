@@ -1,41 +1,30 @@
-# RJP Obras Pro IA V5 Google V4.2
+# RJP Obras Pro IA V6
 
-Base Android/WebApp para gestão de obras, orçamentos, composição de preços, medições/autos, custos reais, diário IA e análise de PDFs.
+Plataforma Android/Web para gestão de obras, orçamentos, medições, autos, PDF inteligente, Google e GPT.
 
-## Novidades V4.2
+## Novidades V6
 
-- Importação de PDF de texto diretamente no browser com `pdfjs-dist`.
-- Separador **IA PDF / GPT** com botão para carregar PDF.
-- Extração de texto por página para análise local ou envio para backend/Apps Script GPT.
-- Botão **Criar artigos no orçamento** a partir de quantidades detetadas no texto/resultado IA.
-- Botão **PDF Auto** em cada medição/auto.
-- Mantém APK + WebApp + Apps Script, como na filosofia RJP Study.
+- Separador **Medição PDF** para abrir plantas PDF no navegador.
+- Calibração de escala com 2 pontos e distância real.
+- Medição de comprimentos, perímetros e áreas.
+- Conversão de medições PDF para artigos do orçamento.
+- PDF inteligente com extração de texto por página.
+- Criação de artigos a partir de análise IA/PDF.
+- Orçamentos com capítulos/subcapítulos, quantidades, unidades e preços.
+- Composição de preços com materiais, mão de obra, equipamentos, subempreitadas, desperdício e margem.
+- Autos de medição com PDF individual.
+- Exportação Excel e relatório PDF.
+- Google Apps Script para sincronização com Sheets/Drive e ponte GPT segura.
 
-## Atenção
+## GitHub
 
-PDFs digitalizados como imagem precisam de OCR ou análise visual através de backend seguro. Não colocar API Key da OpenAI dentro da APK.
-
-## Comandos
+Faz upload dos ficheiros/pastas soltos para o repositório, sem `node_modules` e sem `dist`.
 
 ```bash
-npm install --legacy-peer-deps
+npm install --no-audit --no-fund --legacy-peer-deps
 npm run build
 ```
 
-## Android
+## Aviso
 
-O workflow `.github/workflows/build-android.yml` gera APK via GitHub Actions.
-
-## WebApp
-
-O workflow `.github/workflows/build-web.yml` gera o pacote WebApp em `dist`.
-
-
-## V5 Google
-
-Inclui sincronização Google Sheets, backup Drive e criação de pastas por obra. Ver `README_GOOGLE_V5.md`.
-
-
-## V5.1 — GPT seguro via Apps Script
-
-Ver `README_GPT_V5_1.md`.
+Software de apoio técnico. As medições, preços, relatórios e análises IA devem ser sempre validados pelo utilizador antes de aplicação profissional.
