@@ -1,0 +1,11 @@
+RJP Obras Pro IA V6.1
+
+Novos módulos planeados:
+- Recursos Humanos
+- Equipamentos
+- Centro Financeiro
+- Gestão Documental
+- Dashboard Executivo
+- Relatórios Automáticos
+
+Base preparada para evolução da V6.
