@@ -1,0 +1,38 @@
+RJP Obras Pro IA V6.3
+
+Foco desta versão:
+- Fotografias inteligentes por obra
+- Registo GPS das fotografias
+- Classificação por categoria
+- Ligação foto → obra → medição → diário → relatório
+- Preparação para IA analisar imagens/fotos da obra
+
+Novos módulos previstos:
+1. Fotografias Inteligentes
+   - Tirar/importar fotografia
+   - Guardar data/hora
+   - Guardar coordenadas GPS
+   - Associar à obra
+   - Associar a artigo de orçamento ou medição
+   - Categoria: Estrutura, Betão, Terraplenagem, Acabamentos, Segurança, Patologias, Vedações, AMV, EDF, EBTCC
+
+2. Diário com Fotos
+   - Criar entrada de diário a partir de fotografias
+   - Gerar texto técnico com IA
+   - Anexar fotos ao relatório diário
+
+3. Não Conformidades com Fotos
+   - Criar NC a partir de fotografia
+   - GPS automático
+   - Estado: Aberta, Em análise, Corrigida, Fechada
+
+4. Relatórios Fotográficos
+   - PDF com fotos, legendas, GPS, obra, data e observações
+   - Relatório semanal/mensal/final
+
+5. Preparação para IA Visual
+   - A IA poderá futuramente analisar fotografias e sugerir:
+     - tipo de trabalho executado
+     - possíveis patologias
+     - elementos em falta
+     - texto para diário de obra

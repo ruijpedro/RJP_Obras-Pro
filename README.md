@@ -28,3 +28,21 @@ npm run build
 ## Aviso
 
 Software de apoio técnico. As medições, preços, relatórios e análises IA devem ser sempre validados pelo utilizador antes de aplicação profissional.
+
+
+---
+
+## V6.3 — Fotografias Inteligentes + GPS + IA
+
+Esta fase prepara a aplicação para registo fotográfico técnico por obra.
+
+### Inclui
+- Fotografias por obra
+- GPS
+- Categorias técnicas
+- Ligação a medições, autos, diário e não conformidades
+- Relatórios fotográficos
+- Preparação para IA visual
+
+### Fluxo
+Obra → Fotografia → GPS → Categoria → Observação → Diário/NC/Relatório → Drive

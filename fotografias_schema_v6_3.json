@@ -1,0 +1,24 @@
+{
+  "fotografia": {
+    "id": "foto_001",
+    "obraId": "",
+    "obraNome": "",
+    "data": "",
+    "hora": "",
+    "latitude": "",
+    "longitude": "",
+    "categoria": "Estrutura",
+    "descricao": "",
+    "observacaoTecnica": "",
+    "estado": "Registada",
+    "associadoA": {
+      "medicaoId": "",
+      "orcamentoArtigoId": "",
+      "autoId": "",
+      "diarioId": "",
+      "naoConformidadeId": ""
+    },
+    "driveFileId": "",
+    "localPath": ""
+  }
+}
