@@ -1,1 +1,1 @@
-RJP Obras Pro V5 Base - roadmap IA
+V5.1: Google + GPT seguro por Apps Script; análise IA de PDF/texto; resultados guardados no Drive.

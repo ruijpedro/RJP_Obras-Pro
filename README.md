@@ -34,3 +34,8 @@ O workflow `.github/workflows/build-web.yml` gera o pacote WebApp em `dist`.
 ## V5 Google
 
 Inclui sincronização Google Sheets, backup Drive e criação de pastas por obra. Ver `README_GOOGLE_V5.md`.
+
+
+## V5.1 — GPT seguro via Apps Script
+
+Ver `README_GPT_V5_1.md`.

@@ -6,7 +6,7 @@ import * as XLSX from'xlsx';
 import * as pdfjsLib from'pdfjs-dist/build/pdf.mjs';
 import './style.css';
 pdfjsLib.GlobalWorkerOptions.workerSrc=new URL('pdfjs-dist/build/pdf.worker.mjs',import.meta.url).toString();
-const STORE='rjp_obras_pro_ia_v50_google';
+const STORE='rjp_obras_pro_ia_v51_gpt_google';
 const seedR=[
 {id:'FER-VED-001',fonte:'RJP Ferrovia',cat:'Ferrovia',dom:'Vedações',desc:'Execução/substituição de vedação metálica',un:'m',mo:.40,prod:60,mat:'Postes; rede; fixações',eq:'Berbequim; viatura',pu:35},
 {id:'FER-DRE-001',fonte:'RJP Ferrovia',cat:'Ferrovia',dom:'Drenagem',desc:'Limpeza/reperfilamento de valeta',un:'m',mo:.18,prod:120,mat:'-',eq:'Mini-escavadora; viatura',pu:9},
@@ -52,7 +52,7 @@ return <div className="app"><aside><div className="brand"><div className="logo">
 {tab==='custos'&&<Crud title="Custos reais" obj={custo} set={setCusto} fields={['obraId',['data','date'],'desc',['prev','number'],['real','number'],'tipo']} actions={<button className="primary" onClick={()=>add('custos',custo,setCusto,empty.custo,'cus')}><Euro size={16}/>Guardar custo</button>} list={<List items={filtered(data.custos)} onDel={id=>del('custos',id)} render={c=><><b>{c.data} · {c.desc}</b><span>Previsto {c.prev}€ · Real {c.real}€ · {c.tipo}</span></>}/>} />}
 {tab==='diario'&&<Crud title="Diário de obra com IA local" obj={dia} set={setDia} fields={['obraId',['data','date'],'meteo','equipa','gps']} extra={<><TA label="Trabalhos" v={dia.trab} set={v=>setDia({...dia,trab:v})}/><TA label="Ocorrências" v={dia.ocor} set={v=>setDia({...dia,ocor:v})}/><TA label="Resumo IA" v={dia.ia} set={v=>setDia({...dia,ia:v})}/></>} actions={<><button onClick={()=>gps(setDia,dia)}><MapPin size={16}/>GPS</button><button onClick={diaIA}><Bot size={16}/>Gerar resumo</button><button className="primary" onClick={()=>add('diarios',dia,setDia,empty.dia,'dia')}><Save size={16}/>Guardar</button></>} list={<List items={filtered(data.diarios)} onDel={id=>del('diarios',id)} render={d=><><b>{d.data} · {d.equipa}</b><span>{d.trab} · {d.ia}</span></>}/>} />}
 {tab==='ia'&&<Panel title="Assistente IA para PDFs, cadernos de encargos e medições"><div className="formgrid"><Field label="Título/documento" v={ia.titulo} set={v=>setIa({...ia,titulo:v})}/><label>Importar PDF<input type="file" accept="application/pdf" onChange={importarPdf}/></label></div><TA label="Texto extraído do PDF ou notas" v={ia.texto} set={v=>setIa({...ia,texto:v})}/><div className="actions"><button className="primary" onClick={analisarIA}><Bot size={16}/>Analisar com IA</button><button onClick={criarOrcDaIA}><Calculator size={16}/>Criar artigos no orçamento</button></div><TA label="Resultado" v={ia.resultado} set={v=>setIa({...ia,resultado:v})}/><p className="hint">Agora já lê PDFs de texto diretamente no browser. PDFs digitalizados/imagens precisam de OCR ou análise GPT visual por backend seguro.</p></Panel>}
-{tab==='google'&&<Panel title="Google Drive / Sheets / Pastas por Obra"><Field label="URL Apps Script Sync" v={data.settings.url} set={v=>persist({...data,settings:{...data.settings,url:v}})}/><Field label="URL Apps Script GPT" v={data.settings.gptUrl} set={v=>persist({...data,settings:{...data.settings,gptUrl:v}})}/><div className="actions"><button className="primary" onClick={sync}><RefreshCw size={16}/>Sincronizar Sheets</button><button onClick={googleBackup}><Cloud size={16}/>Backup Drive</button><button onClick={criarPastasGoogle}><Building2 size={16}/>Criar pastas por obra</button><button onClick={exportarGoogleCompleto}><Upload size={16}/>Exportação completa</button></div><Panel title="Estrutura criada no Drive"><pre>{`RJP_Obras_Pro_IA
+{tab==='google'&&<Panel title="Google Drive / Sheets / Pastas por Obra"><Field label="URL Apps Script Sync" v={data.settings.url} set={v=>persist({...data,settings:{...data.settings,url:v}})}/><Field label="URL Apps Script GPT / IA" v={data.settings.gptUrl} set={v=>persist({...data,settings:{...data.settings,gptUrl:v}})}/><div className="actions"><button className="primary" onClick={sync}><RefreshCw size={16}/>Sincronizar Sheets</button><button onClick={googleBackup}><Cloud size={16}/>Backup Drive</button><button onClick={criarPastasGoogle}><Building2 size={16}/>Criar pastas por obra</button><button onClick={exportarGoogleCompleto}><Upload size={16}/>Exportação completa</button></div><Panel title="Estrutura criada no Drive"><pre>{`RJP_Obras_Pro_IA
  ├─ 01_Obras
  │   └─ Nome_da_Obra
  │      ├─ 01_Orçamentos
@@ -61,7 +61,7 @@ return <div className="app"><aside><div className="brand"><div className="logo">
  │      ├─ 04_Fotos
  │      ├─ 05_Diário_de_Obra
  │      └─ 06_Relatórios
- └─ 99_Backups_JSON`}</pre></Panel><p>Cola o ficheiro <b>google-apps-script/Code.gs</b> no Apps Script, publica como Web App e cola aqui o URL de implementação.</p></Panel>}
+ └─ 99_Backups_JSON`}</pre></Panel><p>Cola o ficheiro <b>google-apps-script/Code.gs</b> no Apps Script, publica como Web App e cola aqui o URL de implementação. Para IA real, adiciona a Script Property <b>OPENAI_API_KEY</b> no Apps Script e usa o mesmo URL no campo GPT/IA.</p></Panel>}
 </main></div>}
 function Card({t,v,warn}){return <div className={warn?'card warn':'card'}><small>{t}</small><b>{v}</b></div>}
 function Panel({title,children}){return <section className="panel"><h3>{title}</h3>{children}</section>}
