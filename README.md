@@ -1,4 +1,4 @@
-# RJP Obras Pro IA V4.2
+# RJP Obras Pro IA V5 Google V4.2
 
 Base Android/WebApp para gestão de obras, orçamentos, composição de preços, medições/autos, custos reais, diário IA e análise de PDFs.
 
@@ -29,3 +29,8 @@ O workflow `.github/workflows/build-android.yml` gera APK via GitHub Actions.
 ## WebApp
 
 O workflow `.github/workflows/build-web.yml` gera o pacote WebApp em `dist`.
+
+
+## V5 Google
+
+Inclui sincronização Google Sheets, backup Drive e criação de pastas por obra. Ver `README_GOOGLE_V5.md`.
